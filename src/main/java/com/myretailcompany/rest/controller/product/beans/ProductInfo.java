@@ -18,8 +18,7 @@ public class ProductInfo {
 	private String name;
 
 	@NotNull
-	@Enumerated(EnumType.STRING)
-	private ProductCategory productCategory;
+	private String productCategory;
 
 	@NotNull
 	@DecimalMin(value = "0.1")
@@ -29,7 +28,7 @@ public class ProductInfo {
 		super();
 	}
 
-	public ProductInfo(String barCodeId, double rate, String name, ProductCategory productCategory) {
+	public ProductInfo(String barCodeId, double rate, String name, String productCategory) {
 		super();
 		this.barCodeId = barCodeId;
 		this.name = name;
@@ -45,7 +44,7 @@ public class ProductInfo {
 		return name;
 	}
 
-	public ProductCategory getProductCategory() {
+	public String getProductCategory() {
 		return productCategory;
 	}
 
@@ -61,7 +60,7 @@ public class ProductInfo {
 		this.name = name;
 	}
 
-	public void setProductCategory(ProductCategory productCategory) {
+	public void setProductCategory(String productCategory) {
 		this.productCategory = productCategory;
 	}
 

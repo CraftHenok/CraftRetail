@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.myretailcompany.dataaccesslayer.entity.LineItem;
 import com.myretailcompany.dataaccesslayer.entity.Product;
+
+import com.myretailcompany.dataaccesslayer.entity.ProductCategory;
 import com.myretailcompany.dataaccesslayer.repository.LineItemRepository;
+import com.myretailcompany.dataaccesslayer.repository.ProductCategoryRepository;
 import com.myretailcompany.dataaccesslayer.repository.ProductRepository;
 import com.myretailcompany.rest.controller.CustomException;
 import com.myretailcompany.rest.controller.product.beans.ProductInfo;
@@ -18,7 +21,8 @@ import com.myretailcompany.rest.controller.product.beans.ProductInfo;
 public class ProductService {
 
 	final Logger logger = LogManager.getLogger(getClass());
-
+	@Autowired
+	private ProductCategoryRepository ProductCategoryRepo;
 	@Autowired
 	private ProductRepository productRepo;
 	
@@ -60,6 +64,21 @@ public class ProductService {
 
 	public Iterable<Product> getAllProducts() {
 		Iterable<Product> products = productRepo.findAll();
+		for(Product product : products)
+		{
+			ProductCategory productCategory = ProductCategoryRepo.findOne(Long.parseLong(product.productCategory) );
+			
+			if(productCategory != null)
+			{
+		 		product.setProductCategory( productCategory.getName());
+				
+			}
+			else
+			{
+						product.setProductCategory("");
+				 
+			}
+		}
 		logger.info("returning all products");
 		return products;
 	}

@@ -65,15 +65,15 @@ public class SampleDataSetupRunner implements CommandLineRunner {
 	}
 
 	private void setUpProductData() {
-		productService.createProduct(new ProductInfo("ABC-abc-0001", 20.0, "Tomato", ProductCategory.A));
-		productService.createProduct(new ProductInfo("ABC-abc-0002", 30.0, "Onion", ProductCategory.B));
-		productService.createProduct(new ProductInfo("ABC-abc-0003", 40.0, "Potato", ProductCategory.C));
-		productService.createProduct(new ProductInfo("ABC-abc-0004", 50.0, "Bread", ProductCategory.A));
-		productService.createProduct(new ProductInfo("ABC-abc-0005", 60.0, "Apples", ProductCategory.B));
-		productService.createProduct(new ProductInfo("ABC-abc-0006", 70.0, "Banana", ProductCategory.C));
-		productService.createProduct(new ProductInfo("ABC-abc-0007", 80.0, "Strawberry", ProductCategory.A));
-		productService.createProduct(new ProductInfo("ABC-abc-0008", 90.0, "Apricot", ProductCategory.B));
-		productService.createProduct(new ProductInfo("ABC-abc-0009", 100.0, "Raisins", ProductCategory.C));
-		productService.createProduct(new ProductInfo("ABC-abc-0010", 110.0, "CashewNut", ProductCategory.A));
+		productService.createProduct(new ProductInfo("ABC-abc-0001", 20.0, "Tomato" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0002", 30.0, "Onion" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0003", 40.0, "Potato" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0004", 50.0, "Bread" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0005", 60.0, "Apples" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0006", 70.0, "Banana" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0007", 80.0, "Strawberry" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0008", 90.0, "Apricot" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0009", 100.0, "Raisins" ,"1"));
+		productService.createProduct(new ProductInfo("ABC-abc-0010", 110.0, "CashewNut" ,"1"));
 	}
 }

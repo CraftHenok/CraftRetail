@@ -99,7 +99,7 @@ public class BillService {
 		billRepo.save(bill);
 	}
 
-	private double computeValueForItem(long quantity, ProductCategory productCategory, double rate) {
+	private double computeValueForItem(long quantity, String productCategory, double rate) {
 		logger.debug("productCategory : " + productCategory + "  quantity = " + quantity + "  rate = " + rate);
 		double saleValue = 0;
 		if (productCategory.equals(ProductCategory.A)) {
