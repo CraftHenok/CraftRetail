@@ -66,6 +66,7 @@ public class ProductService {
 		Iterable<Product> products = productRepo.findAll();
 		for(Product product : products)
 		{
+			try{
 			ProductCategory productCategory = ProductCategoryRepo.findOne(Long.parseLong(product.productCategory) );
 			
 			if(productCategory != null)
@@ -77,6 +78,11 @@ public class ProductService {
 			{
 						product.setProductCategory("");
 				 
+			}}
+			catch(Exception e)
+			{
+				product.setProductCategory("");	
+					
 			}
 		}
 		logger.info("returning all products");
