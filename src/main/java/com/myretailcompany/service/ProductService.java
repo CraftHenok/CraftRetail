@@ -81,7 +81,7 @@ public class ProductService {
 			}}
 			catch(Exception e)
 			{
-				product.setProductCategory("");	
+				//product.setProductCategory("");	
 					
 			}
 		}
